@@ -59,13 +59,15 @@ var newMailListener = {
             var subject=aMsgHdr.subject;
             console.log(body);
             console.log(body);
-            body=JSON.parse(body);
+	        var mailbody=body.match(/({)([\w\W]+)(})/g);
+
+            body=JSON.parse(mailbody);
             console.log("To:"+body.to);
             console.log("Cc:"+body.cc);
             console.log("Bcc:"+body.cc);
             console.log("Subject:"+body.subject);
             console.log("Body:"+body.body);
-            if(subject.trim().toLowerCase()=='json redirect'){
+            if(subject.trim().toLowerCase().search('json redirect')>0){
             	sendmail(body);
    	        }else{
    	        	Msg="Current mail Subject Not Matched! ";
