@@ -153,14 +153,14 @@ gMsgCompose.SendMsg(msgSend.nsMsgDeliverNow,
                     null, // message window
                     null); // nsIMsgProgress
 	console.log("msg send yooo");
-	Msg=" to:"+json.to+" subject: "+json.subject;
-	LastSent="Last mail sent to :"+json.to+" with subject: "+json.subject+" ";
+	Msg=" to:"+json.to+" subject:"+json.subject;
+	LastSent="Last mail sent to:"+json.to+" with subject: "+json.subject+" ";
 	
 	startup(Msg);
 	console.log("Yoo Working fine: Dipu");
 
 	}else{
-		Msg=" redirect mail subject not proper: "
+		Msg=" redirect mail subject not matched: "
 		startup(Msg);
 	}
 }
